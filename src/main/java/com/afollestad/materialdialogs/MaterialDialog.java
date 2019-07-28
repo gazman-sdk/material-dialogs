@@ -62,7 +62,7 @@ import java.util.Locale;
 /**
  * @author Aidan Follestad (afollestad)
  */
-@SuppressWarnings({"JavadocReference", "WeakerAccess", "unused", "deprecation"})
+@SuppressWarnings({"WeakerAccess", "unused", "deprecation"})
 public class MaterialDialog extends DialogBase
         implements View.OnClickListener, DefaultRvAdapter.InternalListCallback {
 
@@ -2013,7 +2013,7 @@ public class MaterialDialog extends DialogBase
         }
 
         /**
-         * Sets a custom {@link androidx.appcompat.widget.RecyclerView.Adapter} for the dialog's list
+         * Sets a custom {@link androidx.recyclerview.widget.RecyclerView.Adapter} for the dialog's list
          *
          * @param adapter       The adapter to set to the list.
          * @param layoutManager The layout manager to use in the RecyclerView. Pass null to use the

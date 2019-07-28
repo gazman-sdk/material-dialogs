@@ -455,9 +455,6 @@ public class MDRootLayout extends ViewGroup {
     }
 
     private void invertGravityIfNecessary() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            return;
-        }
         Configuration config = getResources().getConfiguration();
         if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
             switch (buttonGravity) {
