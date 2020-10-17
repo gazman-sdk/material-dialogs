@@ -220,16 +220,13 @@ public class DialogUtils {
         dialog
                 .getInputEditText()
                 .post(
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                dialog.getInputEditText().requestFocus();
-                                InputMethodManager imm =
-                                        (InputMethodManager)
-                                                builder.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                                if (imm != null) {
-                                    imm.showSoftInput(dialog.getInputEditText(), InputMethodManager.SHOW_IMPLICIT);
-                                }
+                        () -> {
+                            dialog.getInputEditText().requestFocus();
+                            InputMethodManager imm =
+                                    (InputMethodManager)
+                                            builder.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                            if (imm != null) {
+                                imm.showSoftInput(dialog.getInputEditText(), InputMethodManager.SHOW_IMPLICIT);
                             }
                         });
     }

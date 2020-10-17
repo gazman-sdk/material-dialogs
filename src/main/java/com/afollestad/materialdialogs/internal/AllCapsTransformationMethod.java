@@ -9,7 +9,7 @@ import java.util.Locale;
 
 class AllCapsTransformationMethod implements TransformationMethod {
 
-    private Locale mLocale;
+    private final Locale mLocale;
 
     AllCapsTransformationMethod(Context context) {
         mLocale = context.getResources().getConfiguration().locale;

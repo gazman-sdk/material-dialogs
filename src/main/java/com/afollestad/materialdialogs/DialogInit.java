@@ -78,7 +78,6 @@ class DialogInit {
         }
     }
 
-    @SuppressWarnings("ConstantConditions")
     @UiThread
     static void init(final MaterialDialog dialog) {
         final MaterialDialog.Builder builder = dialog.builder;

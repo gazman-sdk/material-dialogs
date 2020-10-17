@@ -62,7 +62,7 @@ import java.util.Locale;
 /**
  * @author Aidan Follestad (afollestad)
  */
-@SuppressWarnings({"WeakerAccess", "unused", "deprecation"})
+@SuppressWarnings({"WeakerAccess", "deprecation"})
 public class MaterialDialog extends DialogBase
         implements View.OnClickListener, DefaultRvAdapter.InternalListCallback {
 
@@ -110,7 +110,6 @@ public class MaterialDialog extends DialogBase
         target.setTypeface(t);
     }
 
-    @SuppressWarnings("unused")
     @Nullable
     public Object getTag() {
         return builder.tag;
@@ -292,7 +291,6 @@ public class MaterialDialog extends DialogBase
         return checkBoxPrompt != null && checkBoxPrompt.isChecked();
     }
 
-    @SuppressWarnings("unused")
     public void setPromptCheckBoxChecked(boolean checked) {
         if (checkBoxPrompt != null) {
             checkBoxPrompt.setChecked(checked);
@@ -493,7 +491,6 @@ public class MaterialDialog extends DialogBase
      * Retrieves the TextView that contains the dialog title. If you want to update the title, use
      * #{@link #setTitle(CharSequence)} instead.
      */
-    @SuppressWarnings("unused")
     public final TextView getTitleView() {
         return title;
     }
@@ -501,7 +498,6 @@ public class MaterialDialog extends DialogBase
     /**
      * Retrieves the ImageView that contains the dialog icon.
      */
-    @SuppressWarnings("unused")
     public ImageView getIconView() {
         return icon;
     }
@@ -511,7 +507,6 @@ public class MaterialDialog extends DialogBase
      * (message), use #{@link #setContent(CharSequence)} instead.
      */
     @Nullable
-    @SuppressWarnings("unused")
     public final TextView getContentView() {
         return content;
     }
@@ -607,7 +602,6 @@ public class MaterialDialog extends DialogBase
         setTitle(builder.context.getString(newTitleRes));
     }
 
-    @SuppressWarnings("unused")
     @UiThread
     public final void setTitle(@StringRes int newTitleRes, @Nullable Object... formatArgs) {
         setTitle(builder.context.getString(newTitleRes, formatArgs));
@@ -625,7 +619,6 @@ public class MaterialDialog extends DialogBase
         icon.setVisibility(d != null ? View.VISIBLE : View.GONE);
     }
 
-    @SuppressWarnings("unused")
     @UiThread
     public void setIconAttribute(@AttrRes int attrId) {
         Drawable d = DialogUtils.resolveDrawable(builder.context, attrId);
@@ -643,7 +636,6 @@ public class MaterialDialog extends DialogBase
         setContent(builder.context.getString(newContentRes));
     }
 
-    @SuppressWarnings("unused")
     @UiThread
     public final void setContent(@StringRes int newContentRes, @Nullable Object... formatArgs) {
         setContent(builder.context.getString(newContentRes, formatArgs));
@@ -680,7 +672,6 @@ public class MaterialDialog extends DialogBase
         builder.adapter.notifyItemInserted(index);
     }
 
-    @SuppressWarnings("unused")
     @UiThread
     public final void notifyItemChanged(@IntRange(from = 0, to = Integer.MAX_VALUE) int index) {
         builder.adapter.notifyItemChanged(index);
@@ -698,7 +689,6 @@ public class MaterialDialog extends DialogBase
         return progressBar.getProgress();
     }
 
-    @SuppressWarnings("unused")
     public ProgressBar getProgressBar() {
         return progressBar;
     }
@@ -733,7 +723,6 @@ public class MaterialDialog extends DialogBase
                 });
     }
 
-    @SuppressWarnings("unused")
     public final boolean isIndeterminateProgress() {
         return builder.indeterminateProgress;
     }
@@ -745,7 +734,6 @@ public class MaterialDialog extends DialogBase
         return progressBar.getMax();
     }
 
-    @SuppressWarnings("unused")
     public final void setMaxProgress(final int max) {
         if (builder.progress <= -2) {
             throw new IllegalStateException("Cannot use setMaxProgress() on this dialog.");
@@ -757,7 +745,6 @@ public class MaterialDialog extends DialogBase
      * Change the format of the small text showing the percentage of progress. The default is
      * NumberFormat.getPercentageInstance().
      */
-    @SuppressWarnings("unused")
     public final void setProgressPercentFormat(NumberFormat format) {
         builder.progressPercentFormat = format;
         setProgress(getCurrentProgress()); // invalidates display
@@ -767,7 +754,6 @@ public class MaterialDialog extends DialogBase
      * Change the format of the small text showing current and maximum units of progress. The default
      * is "%1d/%2d".
      */
-    @SuppressWarnings("unused")
     public final void setProgressNumberFormat(String format) {
         builder.progressNumberFormat = format;
         setProgress(getCurrentProgress()); // invalidates display
@@ -783,7 +769,6 @@ public class MaterialDialog extends DialogBase
      * @return Currently selected index of a single choice list, or -1 if not showing a single choice
      * list
      */
-    @SuppressWarnings("unused")
     public int getSelectedIndex() {
         if (builder.listCallbackSingleChoice != null) {
             return builder.selectedIndex;
@@ -801,7 +786,6 @@ public class MaterialDialog extends DialogBase
      * @param index The index of the list item to check.
      */
     @UiThread
-    @SuppressWarnings("unused")
     public void setSelectedIndex(int index) {
         builder.selectedIndex = index;
         if (builder.adapter != null && builder.adapter instanceof DefaultRvAdapter) {
@@ -819,7 +803,6 @@ public class MaterialDialog extends DialogBase
      * list
      */
     @Nullable
-    @SuppressWarnings("unused")
     public Integer[] getSelectedIndices() {
         if (builder.listCallbackMultiChoice != null) {
             return selectedIndicesList.toArray(new Integer[0]);
@@ -837,7 +820,6 @@ public class MaterialDialog extends DialogBase
      * @param indices The indices of the list items to check.
      */
     @UiThread
-    @SuppressWarnings("unused")
     public void setSelectedIndices(@NonNull Integer[] indices) {
         selectedIndicesList = new ArrayList<>(Arrays.asList(indices));
         if (builder.adapter != null && builder.adapter instanceof DefaultRvAdapter) {
@@ -883,7 +865,6 @@ public class MaterialDialog extends DialogBase
     /**
      * Selects all checkboxes in multi choice list dialogs.
      */
-    @SuppressWarnings("unused")
     public void selectAllIndices() {
         selectAllIndices(true);
     }
@@ -1084,7 +1065,7 @@ public class MaterialDialog extends DialogBase
     /**
      * The class used to construct a MaterialDialog.
      */
-    @SuppressWarnings({"WeakerAccess", "unused", "UnusedReturnValue"})
+    @SuppressWarnings({"WeakerAccess", "UnusedReturnValue"})
     public static class Builder {
 
         protected final Context context;
